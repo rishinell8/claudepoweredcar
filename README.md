@@ -7,6 +7,22 @@ everything it sees and thinks over the speaker, until a mission timer runs out.
 
 There is no microphone/voice input path at all in this project.
 
+## Setup: Piper voice model
+
+The Piper text-to-speech model weights (`en_US-lessac-medium.onnx`, ~60 MB)
+are **not** checked into this repo. The matching config
+(`en_US-lessac-medium.onnx.json`) *is* included, so you only need to download
+the weights once into `voice/piper/`:
+
+```
+cd voice/piper
+curl -LO https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx
+```
+
+The `.onnx` and its `.onnx.json` config must sit side by side in
+`voice/piper/`. Other Piper voices work too — see the full list at
+https://github.com/rhasspy/piper.
+
 ## Run it
 
 ```
